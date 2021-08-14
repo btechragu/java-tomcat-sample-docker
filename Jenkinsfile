@@ -18,13 +18,5 @@ pipeline {
             }
             
         }
-        stage('Deploy to Production'){
-            steps{
-                timeout(time:5, unit:'DAYS'){
-                    input message:'Approve Production Deployment?'
-                }
-                build job: 'Deploy_to_prod_env'
-            }
-        }
     }
 }
